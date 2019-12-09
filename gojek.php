@@ -7,11 +7,8 @@ if (!file_exists('token')) {
 
 include ("curl.php");
 echo "\n";
-echo "\e[94m         PRO HUNTER CORPS           \n";
 echo "\e[91m FORMAT NOMOR HP : INDONESIA '62***' , US='1***'\n";
 echo "\e[93m SELAMAT DATANG DI GOJEK SHORTCUT\n";
-echo "\e[93m SUPPORTED by PRO HUNTER MEDAN\n";
-echo "\e[93m KALAU BISA GRATIS KENAPA HARUS BAYAR \n";
 echo "\n";
 echo "\e[96m[X] Masukkan Nomor Handphone (62/1) : ";
 $nope = trim(fgets(STDIN));
