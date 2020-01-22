@@ -31,83 +31,18 @@ if ($register == false)
       else
         {
         file_put_contents("token/".$verif['data']['customer']['name'].".txt", $verif['data']['access_token']);
-        echo "\e[93m[X] Mencoba Redeem : VOUCHER FOOD 30K\n";
+        echo "\e[93m[X] Mencoba Redeem : PAKEGOFOOD\n";
         sleep(3);
         $claim = claim($verif);
         if ($claim == false)
             {
             echo "\e[92m[!]".$voucher."\n";
             sleep(3);
-            echo "\e[93m[X] Mencoba Redeem : VOUCHER FOOD 25K\n";
-            sleep(3);
-            goto next;
             }
             else{
                 echo "\e[92m[X] ".$claim."\n";
                 sleep(3);
-                echo "\e[93m[X] Mencoba Redeem : VOUCHER FOOD 20K\n";
-                sleep(3);
-                goto ride;
             }
-            next:
-            $claim = claim1($verif);
-            if ($claim == false) {
-                echo "\e[92m[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[93m[X] Coba Dulu Redeem : GOFOODSANTAI20K !\n";
-                sleep(3);
-                goto next1;
-            }
-            else{
-                echo "\e[92m[X] ".$claim."\n";
-                sleep(3);
-                echo "\e[93m[X] Coba Dulu Redeem : COBAINGOJEK !\n";
-                sleep(3);
-                goto ride;
-            }
-            next1:
-            $claim = claim2($verif);
-            if ($claim == false) {
-                echo "\e[92m[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[93m[X] Coba Dulu Redeem : COBAINGOJEK !\n";
-                sleep(3);
-                goto ride;
-            }
-          else
-            {
-            echo "\e[92m[X] ".$claim . "\n";
-            sleep(3);
-            echo "\e[93m[X] Coba Dulu Redeem : COBAINGOJEK !\n";
-            sleep(3);
-            goto ride;
-            }
-            ride:
-            $claim = ride($verif);
-            if ($claim == false ) {
-                echo "\e[92m[!]".$claim['errors'][0]['message']."\n";
-                sleep(3);
-                echo "\e[93m[X] Coba Dulu Redeem : AYOCOBAGOJEK !\n";
-                sleep(3);
-
-            }
-            else
-            {
-                echo "\e[92m[X] ".$claim."\n";
-                sleep(3);
-                echo "\e[93m[X] Coba Dulu Redeem : AYOCOBAGOJEK !\n";
-                sleep(3);
-                goto pengen;
-            }
-            pengen:
-            $claim = cekvocer($verif);
-            if ($claim == false ) {
-                echo "\033VOUCHER INVALID/GAGAL REDEEM\n";
-            }
-            else{
-                echo "\e[92m[X] ".$claim."\n";
-                
-        }
     }
     }
 
